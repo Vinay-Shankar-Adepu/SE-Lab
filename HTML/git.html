@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Git Scenarios 1-5</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 15px;
+      background-color: #000;
+      color: #dcdcdc;
+      font-family: Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+    .user { color: #00ffff; }         /* Cyan */
+    .mingw { color: #ff69b4; }        /* Pink */
+    .path  { color: #ffaa00; }        /* Orange-yellow */
+    .branch { color: #00ffff; }       /* Cyan */
+    .command { color: #ffffff; }      /* White */
+    .output { color: #dcdcdc; }       /* Light gray */
+    .green  { color: white; }       /* Bright green */
+    .yellow { color: #ffff00; }       /* Yellow */
+  </style>
+</head>
+<body>
+<!-- Q1: Clone repository -->
+<span class="user">vinay@DESKTOP-J277LFB</span> <span class="mingw">MINGW64</span> <span class="path">~</span> <span class="branch">(main)</span>
+$ <span class="command">git clone https://github.com/vinay/project.git</span>
+<span class="green">Cloning into 'project'...
+remote: Enumerating objects: 42, done.
+remote: Counting objects: 100% (42/42), done.
+remote: Compressing objects: 100% (32/32), done.
+remote: Total 42 (delta 10), reused 42 (delta 10), pack-reused 0
+Receiving objects: 100% (42/42), 8.24 KiB | 2.75 MiB/s, done.
+Resolving deltas: 100% (10/10), done.</span>
+
+<!-- Q2: Show connected remotes -->
+<span class="user">vinay@DESKTOP-J277LFB</span> <span class="mingw">MINGW64</span> <span class="path">~/project</span> <span class="branch">(main)</span>
+$ <span class="command">git remote -v</span>
+<span class="green">origin  https://github.com/vinay/project.git (fetch)
+origin  https://github.com/vinay/project.git (push)</span>
+
+<!-- Q3: Add a new remote -->
+<span class="user">vinay@DESKTOP-J277LFB</span> <span class="mingw">MINGW64</span> <span class="path">~/project</span> <span class="branch">(main)</span>
+$ <span class="command">git remote add upstream https://github.com/example/upstream.git</span>
+
+<!-- Q4: Remove a remote -->
+<span class="user">vinay@DESKTOP-J277LFB</span> <span class="mingw">MINGW64</span> <span class="path">~/project</span> <span class="branch">(main)</span>
+$ <span class="command">git remote remove upstream</span>
+
+<!-- Q5: Rename a remote -->
+<span class="user">vinay@DESKTOP-J277LFB</span> <span class="mingw">MINGW64</span> <span class="path">~/project</span> <span class="branch">(main)</span>
+$ <span class="command">git remote rename origin main-origin</span>
+
+<span class="user">vinay@DESKTOP-J277LFB</span> <span class="mingw">MINGW64</span> <span class="path">~/project</span> <span class="branch">(main)</span>
+$ <span class="command">git remote -v</span>
+<span class="green">main-origin  https://github.com/vinay/project.git (fetch)
+main-origin  https://github.com/vinay/project.git (push)</span>
+</body>
+</html>
